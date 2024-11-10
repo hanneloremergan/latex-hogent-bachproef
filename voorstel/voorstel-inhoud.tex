@@ -21,7 +21,7 @@ Voor dit project wordt een reinforcement learning (RL)-algoritme ontwikkeld, dat
 
 Een belangrijk knelpunt in dit project is het ontbreken van een omgevingskaart. Het RL-model heeft deze kaart nodig om zijn toestand te kunnen waarnemen en zo de beste acties te bepalen. Een gesegmenteerde 2D-kaart kan hiervoor een oplossing bieden. Een mogelijke aanpak is om gekalibreerde puntenwolken in te kleuren met informatie uit gesegmenteerde beelden en deze punten vervolgens in 2D te projecteren. Deze bachelorproef draagt bij aan de ontwikkeling van deze kaart door de semantische segmentatie van beelden uit wijngaarden te realiseren.
 
-Het semantische segmentatiemodel moet op de robot kunnen draaien en gewassen nauwkeurig segmenteren, wat niet vanzelfsprekend is. Dergelijke modellen vereisen veel rekenkracht en geheugen. Bovendien presteren ze vaak minder goed in landbouwomgevingen vanwege de modelarchitecturen, unieke kenmerken van landbouwafbeeldingen en het gebrek aan (gelabelde) landbouwdatasets. Dit leidt tot de hoofdonderzoeksvraag: \textit{'Met welk model kunnen gewassen in een wijngaard nauwkeurig en efficiënt worden gesegmenteerd, en in hoeverre kan gesimuleerde data de generalisatie verbeteren?'}
+Het semantische segmentatiemodel moet op de robot kunnen draaien en gewassen nauwkeurig segmenteren, wat niet vanzelfsprekend is. Dergelijke modellen vereisen veel rekenkracht en geheugen. Bovendien presteren ze vaak minder goed in landbouwomgevingen vanwege de modelarchitecturen, unieke kenmerken van landbouwafbeeldingen en het gebrek aan (gelabelde) landbouwdatasets. Dit leidt tot de hoofdonderzoeksvraag: \emph{'Met welk model kunnen gewassen in een wijngaard nauwkeurig en efficiënt worden gesegmenteerd, en in hoeverre kan gesimuleerde data de generalisatie verbeteren?'}
 
 Binnen het probleemgebied wordt onderzocht welke unieke kenmerken wijngaardafbeeldingen hebben en welke uitdagingen deze vormen voor de segmentatie. Daarnaast wordt gekeken naar welk model geschikt is voor segmentatie binnen de context van wijngaarden.
 
@@ -57,17 +57,11 @@ Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur v
 \section{Methodologie}%
 \label{sec:methodologie}
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
+Tijdens de \textbf{eerste fase} ligt de focus op het verzamelen, analyseren, simuleren en labelen van data. Echte gegevens worden verzameld via camera of uit bestaande datasets, terwijl virtuele wijngaarden worden ontworpen in Blender. Het labelen zal gedeeltelijk automatisch verlopen via Roboflow. Dit leidt tot een gecombineerde dataset van reële en gesynthetiseerde gegevens, specifiek gericht op de segmentatie van druivenplanten. Deze fase is acht weken lang.
 
-Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
+De \textbf{tweede fase} richt zich op de ontwikkeling en evaluatie van het model. Na een literatuuronderzoek naar segmentatie-uitdagingen in landbouwdata wordt een geschikt semantisch segmentatiemodel geselecteerd. Dit model wordt geïmplementeerd met behulp van Keras of GitHub-repositories. Training gebeurt eerst uitsluitend met echte data en vervolgens aangevuld met gesimuleerde data. Naast de algemene modelbeoordeling vindt een evaluatie plaats om te bepalen of virtuele data de generalisatie van het model versterkt. Deze fase resulteert in een afgestemd segmentatiemodel voor gewassen in wijngaarden en neemt vier weken in beslag.
 
-Vermijd onderzoekstechnieken die geen objectieve, meetbare resultaten kunnen opleveren. Enquêtes, bijvoorbeeld, zijn voor een bachelorproef informatica meestal \textbf{niet geschikt}. De antwoorden zijn eerder meningen dan feiten en in de praktijk blijkt het ook bijzonder moeilijk om voldoende respondenten te vinden. Studenten die een enquête willen voeren, hebben meestal ook geen goede definitie van de populatie, waardoor ook niet kan aangetoond worden dat eventuele resultaten representatief zijn.
-
-Uit dit onderdeel moet duidelijk naar voor komen dat je bachelorproef ook technisch voldoen\-de diepgang zal bevatten. Het zou niet kloppen als een bachelorproef informatica ook door bv.\ een student marketing zou kunnen uitgevoerd worden.
-
-Je beschrijft ook al welke tools (hardware, software, diensten, \ldots) je denkt hiervoor te gebruiken of te ontwikkelen.
-
-Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
+De \textbf{derde en laatste fase} concentreert zich op de optimalisatie van het model voor veldtoepassingen. Met technieken zoals pruning en quantization wordt het model geschikt gemaakt voor gebruik op een robot met beperkte rekenkracht. Een eindbeoordeling van het geoptimaliseerde model sluit het proces af. Deze fase duurt twee weken.
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat, conclusie}%
