@@ -15,22 +15,19 @@
 \section{Inleiding}%
 \label{sec:inleiding}
 
-Waarover zal je bachelorproef gaan? Introduceer het thema en zorg dat volgende zaken zeker duidelijk aanwezig zijn:
+Twintig jaar geleden was er nauwelijks sprake van Belgische wijnbouw. De laatste jaren is deze sector echter uitgegroeid tot een productieve pijler binnen onze landbouw. Volgens FOD Economie werd er in 2023 meer dan 3,4 miljoen liter wijn geproduceerd, en de productie blijft groeien. Het aantal hectaren neemt ook elk jaar toe. Daarom krijgt deze sector aandacht binnen het\textit{ Flanders AI Research Programme} (FAIR). FAIR is een consortium van onderzoeksgroepen aan Vlaamse universiteiten en onderzoekscentra, gericht op AI-onderzoek in diverse Vlaamse sectoren. Het Instituut voor Landbouw-, Visserij- en Voedingsonderzoek (ILVO) is een van deze centra. Samen met UAntwerpen werken zij aan een project om de druivenkwaliteit in wijngaarden autonoom te monitoren met behulp van AI.
 
-\begin{itemize}
-  \item kaderen thema
-  \item de doelgroep
-  \item de probleemstelling en (centrale) onderzoeksvraag
-  \item de onderzoeksdoelstelling
-\end{itemize}
+Voor dit project wordt een reinforcement learning (RL)-algoritme ontwikkeld, dat op een kleine landbouwrobot wordt geïmplementeerd. De robot is uitgerust met een arm en sensoren om druiven te meten. Hij kan reeds autonoom monitoren op basis van drie controllers: navigatie, besturing en taakuitvoering. Het RL-model moet deze controllers combineren tot één geïntegreerde controller, waardoor de robot zelfstandig beslissingen kan maken, afhankelijk van de situatie.
 
-Denk er aan: een typische bachelorproef is \textit{toegepast onderzoek}, wat betekent dat je start vanuit een concrete probleemsituatie in bedrijfscontext, een \textbf{casus}. Het is belangrijk om je onderwerp goed af te bakenen: je gaat voor die \textit{ene specifieke probleemsituatie} op zoek naar een goede oplossing, op basis van de huidige kennis in het vakgebied.
+Een belangrijk knelpunt binnen dit project is het ontbreken van een omgevingskaart waarop het RL-algoritme kan navigeren. Een gesegmenteerde 2D-kaart kan hiervoor een oplossing bieden. Een mogelijke aanpak is om gekalibreerde puntenwolken in te kleuren met informatie uit gesegmenteerde beelden en deze punten vervolgens in 2D te projecteren. Deze bachelorproef draagt bij aan de ontwikkeling van deze kaart door de semantische segmentatie van beelden uit wijngaarden te realiseren.
 
-De doelgroep moet ook concreet en duidelijk zijn, dus geen algemene of vaag gedefinieerde groepen zoals \emph{bedrijven}, \emph{developers}, \emph{Vlamingen}, enz. Je richt je in elk geval op it-professionals, een bachelorproef is geen populariserende tekst. Eén specifiek bedrijf (die te maken hebben met een concrete probleemsituatie) is dus beter dan \emph{bedrijven} in het algemeen.
+Het semantische segmentatiemodel moet op de robot kunnen draaien en gewassen nauwkeurig segmenteren, wat niet vanzelfsprekend is. Dergelijke modellen vereisen veel rekenkracht en geheugen. Bovendien presteren ze vaak minder goed in landbouwomgevingen vanwege de modelarchitecturen, unieke kenmerken van landbouwafbeeldingen en het gebrek aan gelabelde landbouwdatasets. Dit leidt tot de hoofdonderzoeksvraag: \textit{'Met welk model kunnen gewassen in een wijngaard nauwkeurig en efficiënt worden gesegmenteerd, en in hoeverre kan gesimuleerde data de generalisatie verbeteren?'}
 
-Formuleer duidelijk de onderzoeksvraag! De begeleiders lezen nog steeds te veel voorstellen waarin we geen onderzoeksvraag terugvinden.
+Binnen het probleemgebied wordt onderzocht welke unieke kenmerken wijngaardafbeeldingen hebben en welke uitdagingen deze vormen voor de segmentatie. Daarnaast wordt gekeken naar welk model geschikt is voor segmentatie binnen de context van wijngaarden.
 
-Schrijf ook iets over de doelstelling. Wat zie je als het concrete eindresultaat van je onderzoek, naast de uitgeschreven scriptie? Is het een proof-of-concept, een rapport met aanbevelingen, \ldots Met welk eindresultaat kan je je bachelorproef als een succes beschouwen?
+In het oplossingsgebied draait het om de praktische verbetering van het model. Hierbij wordt onderzocht hoe gesimuleerde data kan bijdragen aan een betere generalisatie van het model en hoe (semi-)automatische datalabeling ingezet kan worden. Tot slot wordt modeloptimalisatie bekeken voor gebruik op de robot.
+
+Het eindresultaat van de bachelorproef is een proof-of-concept van het afgestemde segmentatiemodel voor de robot, dat gewassen in de wijngaard nauwkeurig kan segmenteren. 
 
 %---------- Stand van zaken ---------------------------------------------------
 
