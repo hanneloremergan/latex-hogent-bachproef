@@ -67,9 +67,9 @@ De \textbf{derde en laatste fase} concentreert zich op de optimalisatie van het 
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
 
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
+Uit het onderzoek wordt een bruikbaar segmentatiemodel verwacht dat kan worden ingezet op een robot, en dat in staat is om wijngaardgewassen nauwkeurig in te kleuren op camerabeelden. Evaluatiemetrics meten hoe vergelijkbaar de modelsegmentaties zijn met de handmatige annotaties. De belangrijkste metrics zijn: Intersection over Union (IoU), Dice-coëfficiënt, precisie en recall, boundary F1-score en pixelnauwkeurigheid. De efficiëntie van het model wordt gemeten op basis van de inferentietijd, modelgrootte en geheugengebruik, samen met de benodigde rekenkracht.
 
-Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw bachelorproef voor een meerwaarde?
+De volgende verwachting is dat gesynthetiseerde data een merkbaar positief effect zal hebben op de generalisatie van het model. De evaluatiemetrics van het model worden eerst berekend na training met enkel de beperkt beschikbare echte data. Deze metrics worden vervolgens vergeleken met de metrics van het model dat is getraind op zowel echte als gesynthetiseerde data. Zo kan aangetoond worden dat gesynthetiseerde data een realistisch alternatief is voor echte data van wijngaarden, die in de praktijk moeilijk te bekomen is in grote hoeveelheden.
 
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
+Dankzij succesvolle segmentatie worden de gewassen in de afbeeldingen ingekleurd. Met behulp van gekalibreerde LIDAR-sensoren kunnen deze ingekleurde gewassen vervolgens ook in de gegenereerde puntwolken worden weergegeven. De 2D-projectie van deze datapunten vormt dan een kaart waarop de gewassen zijn aangeduid. Deze informatie stelt het RL-model in staat om een beter inzicht te krijgen in zijn omgeving, wat essentieel is om zijn toestand te kennen en de juiste acties te kiezen.
 
