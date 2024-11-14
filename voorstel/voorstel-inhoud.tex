@@ -21,7 +21,7 @@ Voor dit doel wordt een reinforcement learning (RL)-algoritme ontwikkeld dat op 
 
 Opdat het RL-model een goede beslissing kan nemen, moet duidelijke omgevingsinformatie worden aangereikt. Er is besloten dit te doen in de vorm van een lokale 2D-kaart van de omgeving, opgesteld met Lidar- en camerasensordata. Een mogelijke methode hiervoor is het inkleuren van gekalibreerde puntenwolken met informatie uit gesegmenteerde beelden, om deze vervolgens te projecteren op een vlak parallel aan het grondvlak. Deze bachelorproef draagt bij aan de interpretatie van camerabeelden door semantische segmentatie te realiseren.
 
-Het semantische segmentatiemodel moet in realtime de druivenranken en -trossen kunnen segmenteren. Dergelijke modellen vereisen veel rekenkracht en geheugen. Bovendien presteren ze vaak minder goed in landbouw, omdat hun architectuur niet afgestemd is op de complexiteit van natuurlijke omgevingen en vanwege het beperkte aantal (gelabelde) datasets. Dit leidt tot de hoofdonderzoeksvraag: \emph{'Hoe kan een deep learning model worden toegepast voor realtime segmentatie van druivenranken en -trossen in wijngaarden, en hoe draagt gesimuleerde data bij aan de generalisatie?'}
+Het semantische segmentatiemodel moet in realtime de druivenranken en -trossen kunnen segmenteren. Dergelijke modellen vereisen veel rekenkracht en geheugen. Bovendien presteren ze vaak minder goed in landbouw, omdat hun architectuur niet afgestemd is op de complexiteit van natuurlijke omgevingen en vanwege het beperkte aantal (gelabelde) datasets. Dit leidt tot de hoofdonderzoeksvraag: \emph{'Hoe kan een deep learning model worden toegepast voor realtime segmentatie van druivenranken en -trossen in wijngaarden, en hoe draagt gesynthetiseerde data bij aan de generalisatie?'}
 
 De volgende deelvragen worden in deze bachelorproef behandeld:
 \begin{itemize}
@@ -32,7 +32,7 @@ De volgende deelvragen worden in deze bachelorproef behandeld:
     \item Hoe kan modeloptimalisatie plaatsvinden om segmentatie in realtime mogelijk te maken?
 \end{itemize}
 
-Het eindresultaat van de bachelorproef is een proof-of-concept van het afgestemde segmentatiemodel voor de robot, dat gewassen in de wijngaard kan segmenteren. Het model zal worden beoordeeld op efficiëntie en nauwkeurigheid.
+Het eindresultaat van de bachelorproef is een \textbf{proof-of-concept} van het afgestemde segmentatiemodel voor de robot, dat gewassen in wijngaarden kan segmenteren. Het model zal worden beoordeeld op efficiëntie en nauwkeurigheid.
 
 %---------- Stand van zaken ---------------------------------------------------
 
@@ -43,7 +43,7 @@ Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein,
 
 Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
 
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Hykes2013}! Denk zeker goed na welke werken je refereert en waarom.
+Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur! Denk zeker goed na welke werken je refereert en waarom.
 
 Draag zorg voor correcte literatuurverwijzingen! Een bronvermelding hoort thuis \emph{binnen} de zin waar je je op die bron baseert, dus niet er buiten! Maak meteen een verwijzing als je gebruik maakt van een bron. Doe dit dus \emph{niet} aan het einde van een lange paragraaf. Baseer nooit teveel aansluitende tekst op eenzelfde bron.
 
@@ -68,8 +68,6 @@ Na de dataverzameling worden evaluatiemaatstaven bepaald om de prestaties van he
 
 Binnen de iteratieve cyclus ligt de nadruk op het doorvoeren van bijsturingen op basis van de evaluatie, met als doel de prestaties te verbeteren en de sim-to-real gap te verkleinen. Dit kan onder andere inhouden dat de modelarchitectuur wordt aangepast of dat de trainingsdata wordt aangevuld. Na elke bijsturing volgt een evaluatie om de impact van de aanpassingen te meten. Tot slot wordt het model geoptimaliseerd voor realtime toepassingen, waarna een finale evaluatie plaatsvindt om de nauwkeurigheid en efficiëntie onder realtime omstandigheden te bevestigen.
 
-Voor de uitvoering kunnen tools zoals Python, PyTorch, TensorFlow, GitHub, Blender en Roboflow worden ingezet; deze lijst is niet exhaustief of definitief.
-
 In figuur \ref{fig:met} wordt het verloop visueel weergegeven.
 
 \begin{figure}[h]
@@ -78,13 +76,20 @@ In figuur \ref{fig:met} wordt het verloop visueel weergegeven.
     \label{fig:met}
 \end{figure}
 
+Voor de uitvoering kunnen tools zoals Python, PyTorch, TensorFlow, GitHub, Blender en Roboflow worden ingezet; deze lijst is niet exhaustief of definitief.
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
 
-Uit het onderzoek wordt een bruikbaar segmentatiemodel verwacht dat kan worden ingezet op een robot, en dat in staat is om wijngaardgewassen nauwkeurig in te kleuren op camerabeelden. Evaluatiemetrics meten hoe vergelijkbaar de modelsegmentaties zijn met de handmatige annotaties. De belangrijkste metrics zijn: Intersection over Union (IoU), Dice-coëfficiënt, precisie en recall, boundary F1-score en pixelnauwkeurigheid. De efficiëntie van het model wordt gemeten op basis van de inferentietijd, modelgrootte en geheugengebruik, samen met de benodigde rekenkracht.
+\subsection{Segmentatiemodel}
+Het onderzoek beoogt een inzetbaar segmentatiemodel te ontwikkelen dat toepasbaar is op een veldrobot voor het segmenteren van druivenplanten in camerabeelden. Evaluatiemaatstaven bepalen hoe goed de segmentaties van het model overeenkomen met handmatige annotaties. De belangrijkste metrics zijn Intersection over Union (IoU), Dice-coëfficiënt, precisie, recall, boundary F1-score, pixelnauwkeurigheid en mean Average Precision (mAP). Daarnaast wordt de efficiëntie van het model geëvalueerd aan de hand van inferentietijd, modelgrootte, geheugengebruik en de benodigde rekenkracht voor realtime toepassing.
 
-De volgende verwachting is dat gesynthetiseerde data een merkbaar positief effect zal hebben op de generalisatie van het model. De evaluatiemetrics van het model worden eerst berekend na training met enkel de beperkt beschikbare echte data. Deze metrics worden vervolgens vergeleken met de metrics van het model dat is getraind op zowel echte als gesynthetiseerde data. Zo kan aangetoond worden dat gesynthetiseerde data een realistisch alternatief is voor echte data van wijngaarden, die in de praktijk moeilijk te bekomen is in grote hoeveelheden.
+\subsection{Synthetische traindata}
+Er wordt verwacht dat gesynthetiseerde data een merkbaar positief effect zal hebben op de generalisatie van het model. Dit komt doordat het tekort aan echte data wordt aangevuld en een bredere variatie aan omstandigheden wordt geboden. De prestaties van het model, getraind uitsluitend met beperkte echte data, worden vergeleken met die van het model dat zowel met echte als gesynthetiseerde data is getraind. Deze manier toont aan of gesynthetiseerde data een realistische aanvulling vormt op data uit wijngaarden en kan bijdragen aan de generalisatie van het model.
 
-Dankzij succesvolle segmentatie worden de gewassen in de afbeeldingen ingekleurd. Met behulp van gekalibreerde LIDAR-sensoren kunnen deze ingekleurde gewassen vervolgens ook in de gegenereerde puntwolken worden weergegeven. De 2D-projectie van deze datapunten vormt dan een kaart waarop de gewassen zijn aangeduid. Deze informatie stelt het RL-model in staat om een beter inzicht te krijgen in zijn omgeving, wat essentieel is om zijn toestand te kennen en de juiste acties te kiezen.
+\subsection{Meerwaarde}
+Door segmentatie worden gewassen in de camerabeelden ingekleurd. Met behulp van gekalibreerde LIDAR-sensoren kunnen deze ingekleurde druivenranken en -trossen worden weergegeven in de gegenereerde puntwolken. Een 2D-projectie van deze 3D-datapunten vormt een kaart waarop de gewassen duidelijk zijn aangeduid. Dit biedt een visuele weergave van de gewaslocatie om het RL-model te ondersteunen bij het kiezen van acties.
+
+
+
