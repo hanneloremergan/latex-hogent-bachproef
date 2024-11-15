@@ -39,14 +39,6 @@ Het eindresultaat van de bachelorproef is een \textbf{proof-of-concept} van het 
 \section{Literatuurstudie}%
 \label{sec:literatuurstudie}
 
-% Voor literatuurverwijzingen zijn er twee belangrijke commando's:
-% \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
-%   geen onderdeel is van de zin.
-% \textcite{KEY} => Auteur (jaartal)  Gebruik dit als de auteursnaam wel een
-%   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
-%   ...'')
-
-% WAAROM IS LANDBOUW LASTIG VOOR SEGMENTATIE
 \subsection{Uitdagingen van segmentatie binnen precisielandbouw}
 Uit onderzoek van \textcite{Luo2024} blijkt dat de interesse in deep learning, en meer specifiek in semantische segmentatie, binnen de precisielandbouw groeit. Deze techniek speelt een belangrijke rol in toepassingen gebaseerd op computervisie. Ze maakt het mogelijk om objecten op pixelniveau binnen een afbeelding te classificeren en toe te wijzen aan specifieke klassen. Modellen, zoals U-Net, SegNet en DeepLab, worden tegenwoordig vaak toegepast in diverse segmentatietoepassingen. Toch blijkt segmentatie binnen complexe landbouwomgevingen nog steeds een uitdaging te zijn. De robuustheid van bestaande segmentatiemethoden voor het verwerken van complexe afbeeldingen moet namelijk verbeterd worden. Daarnaast blijft hun vermogen om te generaliseren naar ongeziene data beperkt. Een bijkomend obstakel is het beperkte aantal gelabelde data, wat de training en evaluatie van nieuw ontwikkelde deep learning-modellen bemoeilijkt. Segmentatiemethoden die de dataset uitbreiden met augmentatie, zoals het gebruik van synthetische data, stellen deep learning-methoden in staat hun segmentatiemogelijkheden te verbeteren.
 
@@ -57,9 +49,12 @@ Zoals eerder vermeld kan synthetische data bijdragen aan de uitbreiding en verbe
 
 \textcite{Anderson2022} stellen ook dat synthetische data het mogelijk maakt om sneller grote hoeveelheden trainingsdata te genereren. Daarbovenop wordt de annotatie van deze data automatisch uitgevoerd, waardoor tijd en kosten worden bespaard. Verder kunnen verschillende aspecten van de afbeeldingen eenvoudig worden aangepast, zoals de omgeving, lichtinval, enzovoort. Deze flexibiliteit is bijzonder waardevol in landbouwtoepassingen, waar onderzoekers verschillende weersomstandigheden en groeifases actief in de datasets moeten opnemen.
 
-\subsection{Optimalisatie}
+\subsection{Modeloptimalisatie}
+\textcite{LopezGonzalez2024} stellen dat de toenemende rekencapaciteit van computers heeft geleid tot een trend waarbij convolutionele neurale netwerken (CNN’s) steeds groter en complexer worden. Dit veroorzaakt een sterke toename in het aantal parameters en berekeningen. Zulke netwerken zijn daardoor lastig te gebruiken op apparaten met beperkte middelen, zoals boordcomputers van autonome voertuigen. Om deze modellen te verkleinen zonder nauwkeurigheid te verliezen, is het essentieel om goed geteste modellen te combineren met compressietechnieken.
 
+\textcite{Denil2013} merkten op dat het trainen of toepassen van \textit{transfer learning} op bekende CNN-modellen vaak resulteert in een overbodig aantal feature maps, onnodige berekeningen en hoog geheugengebruik, wat de prestaties nadelig beïnvloedt.
 
+In hun paper introduceren \textcite{LopezGonzalez2024} een reeks optimalisaties voor U-Net, SegNet en DeepLabv3+. Ze combineren geavanceerde \textit{filter pruning} met verfijnde finetuningstrategieën om irrelevante convolutionele filters te identificeren en te verwijderen met behulp van Principal Component Analysis (PCA). In combinatie met een innovatieve scoreverdelingsmethode leidt dit tot aanzienlijk compactere netwerken. Voor U-Net ontwikkelden ze een unieke \textit{layer pruning}-techniek die de impact van encoder-decoder connecties analyseert en overbodige lagen elimineert. Ze rapporteren indrukwekkende resultaten, waaronder een reductie van maximaal 98,7\% in parameters en 97,5\% in floating point operations, zonder merkbare afname in nauwkeurigheid. Hierdoor worden zowel redundantie als rekenlast beperkt, terwijl de prestaties behouden blijven.
 
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
@@ -93,6 +88,3 @@ Er wordt verwacht dat gesynthetiseerde data een merkbaar positief effect zal heb
 
 \subsection{Meerwaarde}
 Door segmentatie worden gewassen in de camerabeelden ingekleurd. Met behulp van gekalibreerde LIDAR-sensoren kunnen deze ingekleurde druivenranken en -trossen worden weergegeven in de gegenereerde puntwolken. Een 2D-projectie van deze 3D-datapunten vormt een kaart waarop de gewassen duidelijk zijn aangeduid. Dit biedt een visuele weergave van de gewaslocatie om het RL-model te ondersteunen bij het kiezen van acties.
-
-
-
