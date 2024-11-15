@@ -15,7 +15,7 @@
 \section{Inleiding}%
 \label{sec:inleiding}
 
-Twintig jaar geleden was er nauwelijks sprake van Belgische wijnbouw. De laatste jaren is deze sector echter uitgegroeid tot een productieve pijler binnen onze landbouw. Volgens \textcite{FODEconomie2024} werd er in 2023 meer dan 3,4 miljoen liter wijn geproduceerd, en die groei zet zich voort. Ten opzichte van het voorgaande jaar steeg de productie met bijna dertien procent, terwijl het aantal hectaren met elf procent toenam. Daarom krijgt deze sector aandacht binnen het\textit{ Flanders AI Research Programme} (FAIR). FAIR is een consortium van onderzoeksgroepen aan Vlaamse universiteiten en onderzoekscentra, gericht op AI-onderzoek in diverse Vlaamse sectoren. Het Instituut voor Landbouw-, Visserij- en Voedingsonderzoek (ILVO) is een van deze centra. Samen met UAntwerpen werken zij aan een usecase om taken autonoom uit te voeren in wijngaarden met behulp van AI, waaronder het monitoren van de druivenkwaliteit. 
+Twintig jaar geleden was er nauwelijks sprake van Belgische wijnbouw. De laatste jaren is deze sector echter uitgegroeid tot een productieve pijler binnen onze landbouw. Volgens \textcite{FODEconomie2024} werd er in 2023 meer dan 3,4 miljoen liter wijn geproduceerd, en die groei zet zich voort. Ten opzichte van het voorgaande jaar steeg de productie met bijna dertien procent, terwijl het aantal hectaren met elf procent toenam. Daarom krijgt deze sector aandacht binnen het \textit{Flanders AI Research Programme} (FAIR). FAIR is een consortium van onderzoeksgroepen aan Vlaamse universiteiten en onderzoekscentra, gericht op AI-onderzoek in diverse Vlaamse sectoren. Het Instituut voor Landbouw-, Visserij- en Voedingsonderzoek (ILVO) is een van deze centra. Samen met UAntwerpen werken zij aan een usecase om taken autonoom uit te voeren in wijngaarden met behulp van AI, waaronder het monitoren van de druivenkwaliteit. 
 
 Voor dit doel wordt een reinforcement learning (RL)-algoritme ontwikkeld dat op een kleine landbouwrobot wordt geïmplementeerd. De robot heeft een arm en sensoren om druiven te meten. Om een taak autonoom uit te voeren zijn drie controlesystemen nodig: navigatiecontrole, actuatorcontrole en taakcontrole. Het RL-model moet deze controllers samenvoegen tot één geïntegreerde controller zodat de robot zelfstandig beslissingen kan nemen, afhankelijk van de situatie.
 
@@ -32,7 +32,7 @@ De volgende deelvragen worden in deze bachelorproef behandeld:
     \item Hoe kan modeloptimalisatie plaatsvinden om segmentatie in realtime mogelijk te maken?
 \end{itemize}
 
-Het eindresultaat van de bachelorproef is een \textbf{proof-of-concept} van het afgestemde segmentatiemodel voor de robot, dat gewassen in wijngaarden kan segmenteren. Het model zal worden beoordeeld op efficiëntie en nauwkeurigheid.
+Het eindresultaat van de bachelorproef is een \textbf{proof-of-concept} van het afgestemde segmentatiemodel voor de robot, dat gewassen in wijngaarden kan segmenteren. De prestaties van het model en de evaluaties binnen het onderzoek tonen aan of synthetische data de generalisatie heeft verbeterd.
 
 %---------- Stand van zaken ---------------------------------------------------
 
@@ -57,6 +57,20 @@ Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle no
 %   ...'')
 
 Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
+
+
+
+% WAAROM IS LANDBOUW LASTIG VOOR SEGMENTATIE
+
+% 1 MODEL AL NEMEN (ZIE SLIDE WERKWIJZE)
+
+% WAAROM IS SYTH DATA EEN OPLOSSING EN HOE MOET DIE ERUIT ZIEN
+
+% MOGELIJKE OPTIMALISATIE TECHNIEKEN
+
+
+
+
 
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
@@ -83,7 +97,7 @@ Voor de uitvoering kunnen tools zoals Python, PyTorch, TensorFlow, GitHub, Blend
 \label{sec:verwachte_resultaten}
 
 \subsection{Segmentatiemodel}
-Het onderzoek beoogt een inzetbaar segmentatiemodel te ontwikkelen dat toepasbaar is op een veldrobot voor het segmenteren van druivenplanten in camerabeelden. Evaluatiemaatstaven bepalen hoe goed de segmentaties van het model overeenkomen met handmatige annotaties. De belangrijkste metrics zijn Intersection over Union (IoU), Dice-coëfficiënt, precisie, recall, boundary F1-score, pixelnauwkeurigheid en mean Average Precision (mAP). Daarnaast wordt de efficiëntie van het model geëvalueerd aan de hand van inferentietijd, modelgrootte, geheugengebruik en de benodigde rekenkracht voor realtime toepassing.
+Het onderzoek beoogt een inzetbaar segmentatiemodel te ontwikkelen dat toepasbaar is op een veldrobot voor het segmenteren van druivenplanten in camerabeelden. Het model wordt beoordeeld op nauwkeurigheid en efficiëntie. De nauwkeurigheid wordt vastgesteld door te kijken hoe goed de segmentaties van het model overeenkomen met handmatige annotaties. Belangrijke evaluatiemaatstaven hiervoor zijn Intersection over Union (IoU), de Dice-coëfficiënt, precisie, recall, de boundary F1-score, pixelnauwkeurigheid en mean Average Precision (mAP). Daarnaast wordt de efficiëntie van het model beoordeeld op inferentietijd, modelgrootte, geheugengebruik en de benodigde rekenkracht voor realtime toepassing.
 
 \subsection{Synthetische traindata}
 Er wordt verwacht dat gesynthetiseerde data een merkbaar positief effect zal hebben op de generalisatie van het model. Dit komt doordat het tekort aan echte data wordt aangevuld en een bredere variatie aan omstandigheden wordt geboden. De prestaties van het model, getraind uitsluitend met beperkte echte data, worden vergeleken met die van het model dat zowel met echte als gesynthetiseerde data is getraind. Deze manier toont aan of gesynthetiseerde data een realistische aanvulling vormt op data uit wijngaarden en kan bijdragen aan de generalisatie van het model.
