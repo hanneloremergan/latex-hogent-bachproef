@@ -135,5 +135,9 @@ sympy-plots-for-*.tex/
 output/
 out/
 
-# minted
+# minted (zelf toegevoegd)
 _minted/
+
+# blender (zelf toegevoegd)
+synth-data/assets/
+synth-data/renders/
