@@ -52,7 +52,7 @@ Om deze onderzoeksvraag te beantwoorden, worden verschillende deelaspecten onder
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
 \label{sec:onderzoeksdoelstelling}
 
-Het eindresultaat is een proof-of-concept van het segmentatiemodel voor de robot, gericht op het herkennen van gewassen in wijngaarden. Daarbij is rekening gehouden met hardwarebeperkingen van de landbouwrobot. Visuele invoer waarop het model werd getraind, bestaat grotendeels uit synthetische beelden. De modelprestaties en evaluatieresultaten in dit onderzoek bepalen in welke mate synthetische data bijdraagt aan een verbeterde generalisatie van het model. Zo wordt duidelijk of synthetische data toegankelijk is voor deep learning-modellen die ingezet worden in wijngaarden bij schaarste aan data en labels.
+Het eindresultaat is een proof-of-concept van het segmentatiemodel voor de robot, gericht op het herkennen van gewassen in wijngaarden. Daarbij is rekening gehouden met de hardwarebeperkingen van de landbouwrobot. De visuele invoer waarop het model werd getraind, bestaat grotendeels uit synthetische beelden. De modelprestaties en evaluatieresultaten in dit onderzoek bepalen in welke mate synthetische data bijdraagt aan een verbeterde generalisatie van het model. Zo wordt duidelijk of synthetische data bruikbaar is bij een tekort aan (gelabelde) wijngaarddata.
 
 \section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}%
 \label{sec:opzet-bachelorproef}
@@ -61,12 +61,16 @@ Het eindresultaat is een proof-of-concept van het segmentatiemodel voor de robot
 % geven van de opbouw van de rest van de tekst. Deze sectie bevat al een aanzet
 % die je kan aanvullen/aanpassen in functie van je eigen tekst.
 
-De rest van deze bachelorproef is als volgt opgebouwd:
+De bachelorproef is als volgt opgebouwd:
 
 In Hoofdstuk~\ref{ch:stand-van-zaken} wordt een overzicht gegeven van de stand van zaken binnen het onderzoeksdomein, op basis van een literatuurstudie.
 
-In Hoofdstuk~\ref{ch:methodologie} wordt de methodologie toegelicht en worden de gebruikte onderzoekstechnieken besproken om een antwoord te kunnen formuleren op de onderzoeksvragen.
+In Hoofdstuk~\ref{ch:methodologie} wordt de methodologie toegelicht en worden de gebruikte onderzoekstechnieken besproken om een antwoord te kunnen formuleren op de eerste twee onderzoeksvragen.
 
 % TODO: Vul hier aan voor je eigen hoofstukken, één of twee zinnen per hoofdstuk
+
+In Hoofdstuk~\ref{ch:synthetische-data} wordt de synthetische data met bijhorende labels gegenereerd door een gesimuleerde wijngaard op te bouwen.
+
+In Hoofdstuk~\ref{ch:proof-of-concept} wordt het semantische segmentatiemodel uitgewerkt. Eerst wordt het geëvalueerd na training met reële data, vervolgens volgt een tweede evaluatie na toevoeging van synthetische data.
 
 In Hoofdstuk~\ref{ch:conclusie}, tenslotte, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen. Daarbij wordt ook een aanzet gegeven voor toekomstig onderzoek binnen dit domein.
