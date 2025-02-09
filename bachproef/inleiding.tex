@@ -35,24 +35,24 @@ Het semantische segmentatiemodel moet in realtime de druivenranken en -trossen k
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}%
 \label{sec:onderzoeksvraag}
 
-Bovenstaande knelpunten leiden tot de hoofdonderzoeksvraag van deze bachelorproef: \emph{'Hoe kan een deep learning model worden toegepast voor realtime segmentatie van druivenranken en -trossen in wijngaarden, en hoe draagt synthetische data bij aan de generalisatie?'} 
+Bovenstaande knelpunten leiden tot de hoofdonderzoeksvraag van deze bachelorproef: \emph{'Hoe kan een deep learning-model worden toegepast voor realtime segmentatie van druivenranken en -trossen in wijngaarden, en hoe draagt synthetische data bij aan de generalisatie?'} 
 
 Om deze onderzoeksvraag te beantwoorden, worden verschillende deelaspecten onderzocht. Deze staan geformuleerd in de volgende deelvragen:
 
 \begin{itemize}
     \setlength{\itemsep}{0pt}
     \setlength{\parskip}{0pt}
-    \item Wat zijn de natuurlijke en visuele kenmerken van een wijngaard?
+    % \item Wat zijn de natuurlijke en visuele kenmerken van een wijngaard?
     \item Welke uitdagingen ondervinden segmentatiemodellen bij toepassing in de landbouw?
     \item Welke modellen zijn geschikt voor druivenranken en -trossen?
     \item Op welke manier dient synthetische data samengesteld te worden om het segmentatiemodel beter te trainen?
-    \item Hoe kan modeloptimalisatie plaatsvinden om segmentatie in realtime mogelijk te maken?
+    \item Hoe kan modeloptimalisatie plaatsvinden om segmentatie in realtime op edge devices mogelijk te maken?
 \end{itemize}
 
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
 \label{sec:onderzoeksdoelstelling}
 
-Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv.\ om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
+Het eindresultaat is een proof-of-concept van het segmentatiemodel voor de robot, gericht op het herkennen van gewassen in wijngaarden. Daarbij is rekening gehouden met hardwarebeperkingen van de landbouwrobot. Visuele invoer waarop het model werd getraind, bestaat grotendeels uit synthetische beelden. De modelprestaties en evaluatieresultaten in dit onderzoek bepalen in welke mate synthetische data bijdraagt aan een verbeterde generalisatie van het model. Zo wordt duidelijk of synthetische data toegankelijk is voor deep learning-modellen die ingezet worden in wijngaarden bij schaarste aan data en labels.
 
 \section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}%
 \label{sec:opzet-bachelorproef}
