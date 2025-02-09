@@ -19,21 +19,35 @@ De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te
 
 Twintig jaar geleden was er nauwelijks sprake van Belgische wijnbouw. De laatste jaren is deze sector echter uitgegroeid tot een productieve pijler binnen onze landbouw. Volgens \textcite{FODEconomie2024} werd er in 2023 meer dan 3,4 miljoen liter wijn geproduceerd, en die groei zet zich verder voort. 
 
-(FAIR, ILVO introduceren / kader van stageplaats)
+(FAIR, ILVO introduceren / kader van stageplaats) reinforcement learning model heel kort benoemen
+
+foto van treebot - in map graphics? zelf aan te maken
+
+synth data/afbeeldingen zijn in opmars, wordt gebruikt in medische wereld
 
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}%
 \label{sec:probleemstelling}
 
-%Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's'', systeembeheerders, enz.~zijn nog te vaag. Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
+Treebot, de autonome landbouwrobot van ILVO, heeft visuele waarneming nodig om zelfstandig tussen de wijnranken te navigeren. Om een gepaste actie te kiezen, moet de robot kunnen zien waar de druivenranken en -trossen zich bevinden. Computervisie kan dit mogelijk maken, specifiek in de vorm van semantische segmentatie. Hierdoor kan hij de gewassen herkennen en onderscheiden van de achtergrond.
 
-De autonome landbouwrobots bij ILVO moeten hun omgeving visueel kunnen waarnemen om zelfstandig tussen de wijnranken te navigeren. Daarvoor is computervisie nodig, zodat ze gewassen en obstakels kunnen herkennen en hierop reageren.
-
-Het semantische segmentatiemodel moet in realtime de druivenranken en -trossen kunnen segmenteren. Het implementeren van dergelijke modellen op edge devices, zoals landbouwrobots, vormt een uitdaging vanwege beperkte rekenkracht en geheugen. Daarnaast presteren deze modellen vaak minder goed in een landbouwcontext, omdat hun architectuur niet is afgestemd op de complexiteit en variabiliteit van natuurlijke omgevingen. Het grootste struikelblok blijft echter het beperkte aantal beschikbare (gelabelde) landbouwdatasets, aangezien het annoteren van vegetatiebeelden een zeer tijdrovend en arbeidsintensief proces is. Dit bemoeilijkt de training en generalisatie van het model aanzienlijk.
+Het semantische segmentatiemodel moet in realtime de druivenranken en -trossen kunnen segmenteren. De implementatie van dergelijke modellen op edge devices, zoals kleine landbouwrobots, vormt een uitdaging vanwege beperkte rekenkracht en geheugen. Daarnaast presteren deze modellen vaak minder goed in een landbouwcontext, omdat hun architectuur niet is afgestemd op de complexiteit en variabiliteit van natuurlijke omgevingen. Het grootste struikelblok blijft echter het beperkte aantal beschikbare en gelabelde landbouwdatasets. Het annoteren van vegetatiebeelden is namelijk een zeer tijdrovend en arbeidsintensief proces. Dit bemoeilijkt de training en generalisatie van een model aanzienlijk.
 
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}%
 \label{sec:onderzoeksvraag}
 
-Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
+Bovenstaande knelpunten leiden tot de hoofdonderzoeksvraag van deze bachelorproef: \emph{'Hoe kan een deep learning model worden toegepast voor realtime segmentatie van druivenranken en -trossen in wijngaarden, en hoe draagt synthetische data bij aan de generalisatie?'} 
+
+Om deze onderzoeksvraag te beantwoorden, worden verschillende deelaspecten onderzocht. Deze staan geformuleerd in de volgende deelvragen:
+
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \item Wat zijn de natuurlijke en visuele kenmerken van een wijngaard?
+    \item Welke uitdagingen ondervinden segmentatiemodellen bij toepassing in de landbouw?
+    \item Welke modellen zijn geschikt voor druivenranken en -trossen?
+    \item Op welke manier dient synthetische data samengesteld te worden om het segmentatiemodel beter te trainen?
+    \item Hoe kan modeloptimalisatie plaatsvinden om segmentatie in realtime mogelijk te maken?
+\end{itemize}
 
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
 \label{sec:onderzoeksdoelstelling}
