@@ -33,7 +33,7 @@ Het semantische segmentatiemodel moet in realtime de druivenranken en -trossen k
 
 Bovenstaande knelpunten leiden tot de hoofdonderzoeksvraag van deze bachelorproef: \emph{'Hoe kan een deep learning-model worden toegepast voor realtime segmentatie van druivenranken en -trossen in wijngaarden, en hoe draagt synthetische data bij aan de generalisatie?'} 
 
-Om deze onderzoeksvraag te beantwoorden, worden verschillende deelaspecten onderzocht. Deze staan geformuleerd in de volgende deelvragen:
+Om bovenstaande onderzoeksvraag te beantwoorden, worden verschillende deelaspecten onderzocht. Deze staan geformuleerd in de volgende deelvragen:
 
 \begin{itemize}
     \setlength{\itemsep}{0pt}
@@ -44,6 +44,8 @@ Om deze onderzoeksvraag te beantwoorden, worden verschillende deelaspecten onder
     \item Op welke manier dient synthetische data samengesteld te worden om het segmentatiemodel beter te trainen?
     \item Hoe kan modeloptimalisatie plaatsvinden om segmentatie in realtime op edge devices mogelijk te maken?
 \end{itemize}
+
+Samen vormen ze de basis voor het verdere verloop van dit werk.
 
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
 \label{sec:onderzoeksdoelstelling}
@@ -57,12 +59,12 @@ De bachelorproef is als volgt opgebouwd:
 
 In Hoofdstuk~\ref{ch:stand-van-zaken} wordt een overzicht gegeven van de stand van zaken binnen het onderzoeksdomein, op basis van een literatuurstudie.
 
-In Hoofdstuk~\ref{ch:methodologie} wordt de methodologie toegelicht en worden de gebruikte onderzoekstechnieken besproken om een antwoord te kunnen formuleren op de eerste twee onderzoeksvragen.
+In Hoofdstuk~\ref{ch:methodologie} worden de methodologie en onderzoekstechnieken besproken, met een literatuurstudie als antwoord op de eerste twee deelvragen.
 
 % TODO: Vul hier aan voor je eigen hoofstukken, één of twee zinnen per hoofdstuk
 
 In Hoofdstuk~\ref{ch:synthetische-data} wordt de synthetische data met bijhorende labels gegenereerd door een gesimuleerde wijngaard op te bouwen.
 
-In Hoofdstuk~\ref{ch:proof-of-concept} wordt het semantische segmentatiemodel uitgewerkt. Eerst wordt het geëvalueerd na training met reële data, vervolgens volgt een tweede evaluatie na toevoeging van synthetische data.
+In Hoofdstuk~\ref{ch:proof-of-concept} wordt het semantische segmentatiemodel uitgewerkt. Eerst volgt een evaluatie na training met reële data, daarna een tweede evaluatie met toevoeging van synthetische data.
 
 In Hoofdstuk~\ref{ch:conclusie}, tenslotte, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen. Daarbij wordt ook een aanzet gegeven voor toekomstig onderzoek binnen dit domein.
