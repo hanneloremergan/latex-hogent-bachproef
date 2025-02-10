@@ -7,9 +7,13 @@
 
 De Belgische wijnbouwsector heeft de afgelopen twintig jaar een opmerkelijke groei doorgemaakt.  Twintig jaar geleden was er nauwelijks sprake van wijnbouw, maar de sector is de laatste jaren uitgegroeid tot een productieve pijler binnen onze landbouw. Volgens \textcite{FODEconomie2024} werd er in 2023 meer dan 3,4 miljoen liter wijn geproduceerd, en die groei zet zich voort. Ten opzichte van het voorgaande jaar steeg de productie met bijna dertien procent, terwijl het aantal hectaren met elf procent toenam. 
 
-Vanwege deze opmars krijgt de sector aandacht binnen het \textit{Flanders AI Research Programme} (FAIR). FAIR is een consortium van onderzoeksgroepen aan Vlaamse universiteiten en onderzoekscentra, gericht op AI-onderzoek in diverse Vlaamse sectoren. Het Instituut voor Landbouw-, Visserij- en Voedingsonderzoek (ILVO) is een van deze centra. 
+Vanwege deze opmars krijgt de sector aandacht binnen het \textit{Flanders AI Research Programme} (FAIR). FAIR is een consortium van onderzoeksgroepen aan Vlaamse universiteiten en onderzoekscentra, gericht op AI-onderzoek in diverse Vlaamse sectoren. Het Instituut voor Landbouw-, Visserij- en Voedingsonderzoek (ILVO) is een van deze centra. Binnen het programma wordt onderzocht hoe AI kan bijdragen aan innovatie en duurzaamheid.
 
-ILVO en UAntwerpen werken samen aan een AI-toepassing die wordt ingezet in wijngaarden. Hiermee kunnen kleine landbouwrobots autonoom taken uitvoeren, zoals het monitoren van de druivenkwaliteit. Hiervoor wordt een reinforcement learning (RL)-algoritme ontwikkeld en geïmplementeerd op ILVO's Treebot. [FOTO TREEBOT]
+ILVO en UAntwerpen werken samen aan een AI-toepassing die wordt ingezet in wijngaarden. Hiermee kunnen kleine landbouwrobots autonoom taken uitvoeren, zoals het monitoren van de druivenkwaliteit. Hiervoor wordt een reinforcement learning (RL)-algoritme ontwikkeld en geïmplementeerd op ILVO's Treebot. \begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{treebot.png}
+    \caption[Treebot ILVO.]{\label{fig:treebot}Treebot ILVO.}
+\end{figure}
 
 De robot beschikt over een arm en sensoren om druiven te inspecteren. Om een taak autonoom uit te voeren zijn momenteel drie controlesystemen nodig: navigatiecontrole, actuatorcontrole en taakcontrole. Het RL-algoritme moet deze controllers samenvoegen tot één geïntegreerde controller zodat de robot zelfstandig beslissingen kan nemen, afhankelijk van de situatie.
 
@@ -20,7 +24,7 @@ Het trainen van een dergelijk model is niet vanzelfsprekend, aangezien een grote
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}%
 \label{sec:probleemstelling}
 
-Treebot, de autonome landbouwrobot van ILVO, heeft visuele waarneming nodig om zelfstandig tussen de wijnranken te werken. Om een gepaste actie te kiezen, moet de robot kunnen zien waar de druivenranken en -trossen zich bevinden. Computervisie kan dit mogelijk maken, specifiek in de vorm van semantische segmentatie. Hierdoor kan hij de gewassen herkennen en onderscheiden van de achtergrond.
+Treebot, de landbouwrobot van ILVO, heeft visuele waarneming nodig om zelfstandig tussen de wijnranken te werken. Om een gepaste actie te kiezen, moet de robot kunnen zien waar de druivenranken en -trossen zich bevinden. Computervisie kan dit mogelijk maken, specifiek in de vorm van semantische segmentatie. Hierdoor kan hij de gewassen herkennen en onderscheiden van de achtergrond.
 
 Het semantische segmentatiemodel moet in realtime de druivenranken en -trossen kunnen segmenteren. De implementatie van dergelijke modellen op edge devices, zoals kleine landbouwrobots, vormt een uitdaging vanwege beperkte rekenkracht en geheugen. Daarnaast presteren deze modellen vaak minder goed in een landbouwcontext, omdat hun architectuur niet is afgestemd op de complexiteit en variabiliteit van natuurlijke omgevingen. Het grootste struikelblok blijft echter het beperkte aantal beschikbare en gelabelde landbouwdatasets. Het annoteren van vegetatiebeelden is namelijk een zeer tijdrovend en arbeidsintensief proces. Dit bemoeilijkt de training en generalisatie van een model aanzienlijk.
 
