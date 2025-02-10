@@ -5,30 +5,22 @@
 \chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}%
 \label{ch:inleiding}
 
-De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}:
+De Belgische wijnbouwsector heeft de afgelopen twintig jaar een opmerkelijke groei doorgemaakt.  Twintig jaar geleden was er nauwelijks sprake van wijnbouw, maar de sector is de laatste jaren uitgegroeid tot een productieve pijler binnen onze landbouw. Volgens \textcite{FODEconomie2024} werd er in 2023 meer dan 3,4 miljoen liter wijn geproduceerd, en die groei zet zich voort. Ten opzichte van het voorgaande jaar steeg de productie met bijna dertien procent, terwijl het aantal hectaren met elf procent toenam. 
 
-\begin{itemize}
-  \item context, achtergrond
-  \item afbakenen van het onderwerp
-  \item verantwoording van het onderwerp, methodologie
-  \item probleemstelling
-  \item onderzoeksdoelstelling
-  \item onderzoeksvraag
-  \item \ldots
-\end{itemize}
+Vanwege deze opmars krijgt de sector aandacht binnen het \textit{Flanders AI Research Programme} (FAIR). FAIR is een consortium van onderzoeksgroepen aan Vlaamse universiteiten en onderzoekscentra, gericht op AI-onderzoek in diverse Vlaamse sectoren. Het Instituut voor Landbouw-, Visserij- en Voedingsonderzoek (ILVO) is een van deze centra. 
 
-Twintig jaar geleden was er nauwelijks sprake van Belgische wijnbouw. De laatste jaren is deze sector echter uitgegroeid tot een productieve pijler binnen onze landbouw. Volgens \textcite{FODEconomie2024} werd er in 2023 meer dan 3,4 miljoen liter wijn geproduceerd, en die groei zet zich verder voort. 
+ILVO en UAntwerpen werken samen aan een AI-toepassing die wordt ingezet in wijngaarden. Hiermee kunnen kleine landbouwrobots autonoom taken uitvoeren, zoals het monitoren van de druivenkwaliteit. Hiervoor wordt een reinforcement learning (RL)-algoritme ontwikkeld en geïmplementeerd op ILVO's Treebot. [FOTO TREEBOT]
 
-(FAIR, ILVO introduceren / kader van stageplaats) reinforcement learning model heel kort benoemen
+De robot beschikt over een arm en sensoren om druiven te inspecteren. Om een taak autonoom uit te voeren zijn momenteel drie controlesystemen nodig: navigatiecontrole, actuatorcontrole en taakcontrole. Het RL-algoritme moet deze controllers samenvoegen tot één geïntegreerde controller zodat de robot zelfstandig beslissingen kan nemen, afhankelijk van de situatie.
 
-foto van treebot - in map graphics? zelf aan te maken
+Om correcte beslissingen te nemen, moet het RL-algoritme over duidelijke omgevingsinformatie beschikken. Voordat een omgevingskaart kan worden opgesteld, moet de robot druivenranken en -trossen herkennen. Treebot is uitgerust met een cameraplatform. De bachelorproef draagt bij aan de interpretatie van deze beelden en de vegetatie door semantische segmentatie toe te passen.
 
-synth data/afbeeldingen zijn in opmars, wordt gebruikt in medische wereld
+Het trainen van een dergelijk model is niet vanzelfsprekend, aangezien een grote hoeveelheid gelabelde data nodig is. Dit vormt een uitdaging voor semantische segmentatie in elke sector, maar in een wijngaardcontext is dit nog lastiger. De planten hebben een complexe, organische structuur met overlappende bladeren en variabele vormen, wat het labelen op pixelniveau bijzonder uitdagend maakt. Het correct onderscheiden van druivenranken en -trossen ten opzichte van de achtergrond vraagt daarom meer precisie en inspanning dan bij objecten met duidelijke contouren. Binnen deze bachelorproef wordt onderzocht in welke mate synthetische data kan bijdragen aan het opvangen van dit tekort en het efficiënter maken van het trainingsproces.
 
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}%
 \label{sec:probleemstelling}
 
-Treebot, de autonome landbouwrobot van ILVO, heeft visuele waarneming nodig om zelfstandig tussen de wijnranken te navigeren. Om een gepaste actie te kiezen, moet de robot kunnen zien waar de druivenranken en -trossen zich bevinden. Computervisie kan dit mogelijk maken, specifiek in de vorm van semantische segmentatie. Hierdoor kan hij de gewassen herkennen en onderscheiden van de achtergrond.
+Treebot, de autonome landbouwrobot van ILVO, heeft visuele waarneming nodig om zelfstandig tussen de wijnranken te werken. Om een gepaste actie te kiezen, moet de robot kunnen zien waar de druivenranken en -trossen zich bevinden. Computervisie kan dit mogelijk maken, specifiek in de vorm van semantische segmentatie. Hierdoor kan hij de gewassen herkennen en onderscheiden van de achtergrond.
 
 Het semantische segmentatiemodel moet in realtime de druivenranken en -trossen kunnen segmenteren. De implementatie van dergelijke modellen op edge devices, zoals kleine landbouwrobots, vormt een uitdaging vanwege beperkte rekenkracht en geheugen. Daarnaast presteren deze modellen vaak minder goed in een landbouwcontext, omdat hun architectuur niet is afgestemd op de complexiteit en variabiliteit van natuurlijke omgevingen. Het grootste struikelblok blijft echter het beperkte aantal beschikbare en gelabelde landbouwdatasets. Het annoteren van vegetatiebeelden is namelijk een zeer tijdrovend en arbeidsintensief proces. Dit bemoeilijkt de training en generalisatie van een model aanzienlijk.
 
@@ -52,7 +44,7 @@ Om deze onderzoeksvraag te beantwoorden, worden verschillende deelaspecten onder
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
 \label{sec:onderzoeksdoelstelling}
 
-Het eindresultaat is een proof-of-concept van het segmentatiemodel voor de robot, gericht op het herkennen van gewassen in wijngaarden. Daarbij is rekening gehouden met de hardwarebeperkingen van de landbouwrobot. De visuele invoer waarop het model werd getraind, bestaat grotendeels uit synthetische beelden. De modelprestaties en evaluatieresultaten in dit onderzoek bepalen in welke mate synthetische data bijdraagt aan een verbeterde generalisatie van het model. Zo wordt duidelijk of synthetische data bruikbaar is bij een tekort aan (gelabelde) wijngaarddata.
+Het eindresultaat is een proof-of-concept van het segmentatiemodel voor de robot, gericht op het herkennen van gewassen in wijngaarden. Daarbij is rekening gehouden met de hardwarebeperkingen van de landbouwrobot. De visuele invoer waarop het model werd getraind, bestaat grotendeels uit synthetische beelden. De modelprestaties en evaluatieresultaten in dit onderzoek bepalen in welke mate synthetische data bijdraagt aan een verbeterde generalisatie van het model. Zo wordt duidelijk of synthetische data bruikbaar is bij een tekort aan gelabelde wijngaarddata.
 
 \section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}%
 \label{sec:opzet-bachelorproef}
