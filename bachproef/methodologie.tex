@@ -26,5 +26,30 @@
 %% Maak voor elke fase (behalve het literatuuronderzoek) een NIEUW HOOFDSTUK aan
 %% en geef het een gepaste titel.
 
-\lipsum[21-25]
+\begin{listing}
+    \begin{minted}{python}
+        import pandas as pd
+        import seaborn as sns
+        
+        penguins = sns.load_dataset('penguins')
+        sns.relplot(data=penguins, x="flipper_length_mm", y="bill_length_mm", hue="species")
+    \end{minted}
+    \caption[Voorbeeld codefragment]{Voorbeeld van het invoegen van een codefragment.}
+\end{listing}
 
+\begin{table}
+    \centering
+    \begin{tabular}{lcr}
+        \toprule
+        \textbf{Kolom 1} & \textbf{Kolom 2} & \textbf{Kolom 3} \\
+        $\alpha$         & $\beta$          & $\gamma$         \\
+        \midrule
+        A                & 10.230           & a                \\
+        B                & 45.678           & b                \\
+        C                & 99.987           & c                \\
+        \bottomrule
+    \end{tabular}
+    \caption[Voorbeeld tabel]{\label{tab:example}Voorbeeld van een tabel.}
+\end{table}
+
+\lipsum[21-25]
