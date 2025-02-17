@@ -19,7 +19,7 @@ De voordelen zijn aanzienlijk: door een hogere efficiëntiegraad van grondstoffe
 
 Via geavanceerde sensoren en intelligente monitoringtools krijgen landbouwers realtime data, waaronder informatie over de gewasgezondheid en -bescherming. Technologieën zoals Internet of Things, robotica en computervisie automatiseren arbeidsintensieve processen. Hierdoor worden oogstopbrengst en productiviteit geoptimaliseerd.
 
-Deze bachelorproef situeert zich binnen deze context, met een bijzondere focus op computervisie. Semantische segmentatie, de proefopstelling van dit werkstuk, is een specifiek onderdeel van dit vakgebied.
+Deze bachelorproef situeert zich binnen deze context, met een bijzondere focus op computervisie.
 
 \section{Computervisie in precisielandbouw}
 \subsection{Wat is precisielandbouw}
@@ -44,11 +44,25 @@ Daarnaast detecteren camera’s met computervisie vroegtijdig signalen van plant
 Een andere belangrijke toepassing is de oogstinschatting. Door beeldanalyses kan een robot inschatten hoeveel opbrengst er te verwachten is, hoe groot de gewassen zijn en in welke mate ze rijp zijn. Dit stelt telers in staat om het oogstmoment nauwkeuriger te plannen en de rijpste gewassen eerst te selecteren.
 
 \subsection{Objectdetectie en segmentatie}
-% een afbeelding gebruiken voor beiden -  zie bron 13 '8 practical applications of AI'
+% een afbeelding gebruiken voor beiden
 % linken aan hoofdonderzoeksvraag
 
 % De overkoepelende termen voor de technieken vermeld in de bovenstaande sectie heten objectdetectie en segmentatie. / DUIDELIJKER EN APART SCHRIJVEN
 % EXPLICIET HERHALEN VAN CLASSIFICEREN EN DETECTEREN
+
+De technieken besproken in de vorige sectie vallen onder de overkoepelende termen objectdetectie en segmentatie. Volgens \textcite{Sharma2020} richt objectdetectie zich op het identificeren en classificeren van objecten in een afbeelding. De precieze locatie van elk object wordt aangeduid met een begrenzingskader. Het beoordelen van rijpheid bijvoorbeeld, zoals hierboven beschreven en weergegeven in figuur \ref{fig:strawberry}, gebeurt met objectdetectie.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{strawberry.png}
+    \caption[Voorbeeld objectdetectie.]{\label{fig:strawberry}Een visueel voorbeeld van objectdetectie: groen duidt rijpe aardbeien aan, rood onrijpe en blauw halfrijpe \autocite{Chai2023}.}
+\end{figure}
+
+Segmentatie daarentegen gaat een stap verder: elk pixel in de afbeelding wordt toegewezen aan een specifieke klasse, waardoor objecten niet alleen worden geïdentificeerd, maar ook volledig worden ingekleurd op pixelniveau in plaats van met een kader. Als voorbeeld brengt het de exacte verspreiding van een plantenziekte in kaart of onderscheidt het een plant van de achtergrond. 
+
+Segmentatie biedt een gedetailleerdere visuele interpretatie dan objectdetectie en komt in twee vormen voor: semantische segmentatie en instantiesegmentatie. Bij semantische segmentatie worden alle objecten van dezelfde categorie in dezelfde kleur gemarkeerd, terwijl bij instantie-segmentatie elk individueel object binnen een categorie een unieke kleur krijgt toegewezen. Dit zorgt voor een onderling onderscheid tussen objecten binnen dezelfde klasse. 
+
+De proefopstelling van deze bachelorproef bestaat uit een semantisch segmentatiemodel.
 
 \subsection{Huidige uitdagingen}
 % EG !!! kritisch zijn (defecten moeten snel en nauwkeurig aangeduid worden, segmentatie heeft veel kracht en opslag nodig ...)
