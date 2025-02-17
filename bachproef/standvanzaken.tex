@@ -22,6 +22,9 @@ Via geavanceerde sensoren en intelligente monitoringtools krijgen landbouwers re
 Deze bachelorproef situeert zich binnen deze context, met een bijzondere focus op computervisie.
 
 \section{Computervisie in precisielandbouw}
+
+% Inleiding schrijven
+
 \subsection{Wat is precisielandbouw}
 Deze bachelorproef kan binnen het grotere geheel van precisielandbouw worden geplaatst. \textcite{Cisternas2020} definiëren dit als volgt: 
 
@@ -36,7 +39,7 @@ De auteurs benadrukken dat computervisie een veelbelovende technologie is binnen
 
 Dit vakgebied wordt breed onderzocht en ingezet bij verschillende sectoren. Het vindt toepassingen in de industrie, medische wereld en precisielandbouw. Voorbeelden zijn zelfrijdende auto’s, defectdetectie op lopende banden en röntgenbeeldverwerking. Binnen de landbouw wordt computervisie ingezet voor taken zoals gewasmonitoring en geautomatiseerd oogsten.
 
-\subsection{Applicatie van computervisie}
+\subsection{Applicaties van computervisie}
 Verder stellen \textcite{Radojcic2023} dat computervisie het proces van beoordeling, sortering en kwaliteitscontrole van fruit en groenten automatiseert. Met behulp van computervisiemodellen kunnen gewassen geclassificeerd worden op basis van grootte, vorm, kleur, textuur en andere kenmerken. De hoogwaardige gewassen worden sneller verwerkt en behouden een hogere versheid tegen de tijd dat ze in de handel komen.
 
 Daarnaast detecteren camera’s met computervisie vroegtijdig signalen van plantenziektes en insectenplagen. Hierdoor kunnen telers sneller en doelgerichter ingrijpen, wat aanzienlijke schade kan voorkomen. Dit leidt op zijn beurt tot een gezondere teelt en een hogere opbrengst.
@@ -44,12 +47,6 @@ Daarnaast detecteren camera’s met computervisie vroegtijdig signalen van plant
 Een andere belangrijke toepassing is de oogstinschatting. Door beeldanalyses kan een robot inschatten hoeveel opbrengst er te verwachten is, hoe groot de gewassen zijn en in welke mate ze rijp zijn. Dit stelt telers in staat om het oogstmoment nauwkeuriger te plannen en de rijpste gewassen eerst te selecteren.
 
 \subsection{Objectdetectie en segmentatie}
-% een afbeelding gebruiken voor beiden
-% linken aan hoofdonderzoeksvraag
-
-% De overkoepelende termen voor de technieken vermeld in de bovenstaande sectie heten objectdetectie en segmentatie. / DUIDELIJKER EN APART SCHRIJVEN
-% EXPLICIET HERHALEN VAN CLASSIFICEREN EN DETECTEREN
-
 De technieken besproken in de vorige sectie vallen onder de overkoepelende termen objectdetectie en segmentatie. Volgens \textcite{Sharma2020} richt objectdetectie zich op het identificeren en classificeren van objecten in een afbeelding. De precieze locatie van elk object wordt aangeduid met een begrenzingskader. Het beoordelen van rijpheid bijvoorbeeld, zoals hierboven beschreven en weergegeven in figuur \ref{fig:strawberry}, gebeurt met objectdetectie.
 
 \begin{figure}
@@ -60,9 +57,7 @@ De technieken besproken in de vorige sectie vallen onder de overkoepelende terme
 
 Segmentatie daarentegen gaat een stap verder: elk pixel in de afbeelding wordt toegewezen aan een specifieke klasse, waardoor objecten niet alleen worden geïdentificeerd, maar ook volledig worden ingekleurd op pixelniveau in plaats van met een kader. Als voorbeeld brengt het de exacte verspreiding van een plantenziekte in kaart of onderscheidt het een plant van de achtergrond.
  
-Segmentatie biedt een gedetailleerdere visuele interpretatie dan objectdetectie. Er zijn twee vormen van segmentatie: semantische segmentatie en instantiesegmentatie. Bij semantische segmentatie worden alle objecten van eenzelfde categorie in dezelfde kleur gemarkeerd. Instantiesegmentatie daarentegen wijst elk individueel object binnen een categorie een unieke kleur toe. Hierdoor kunnen objecten binnen dezelfde klasse van elkaar worden onderscheiden. Figuur \ref{fig:plants} toont beide vormen van segmentatie.
-
-De proefopstelling van deze bachelorproef bestaat uit een semantisch segmentatiemodel. 
+Segmentatie biedt een gedetailleerdere visuele interpretatie dan objectdetectie. Er zijn twee vormen van segmentatie: semantische segmentatie en instantiesegmentatie. Bij semantische segmentatie worden alle objecten van eenzelfde categorie in dezelfde kleur gemarkeerd. Instantiesegmentatie daarentegen wijst elk individueel object binnen een categorie een unieke kleur toe. Hierdoor kunnen objecten binnen dezelfde klasse van elkaar worden onderscheiden. Figuur \ref{fig:plants} toont beide vormen van segmentatie. De proefopstelling van deze bachelorproef bestaat uit een semantisch segmentatiemodel. 
 
 \begin{figure}
     \centering
@@ -72,11 +67,13 @@ De proefopstelling van deze bachelorproef bestaat uit een semantisch segmentatie
 
 Hoewel objectdetectie en segmentatie krachtige en veelgebruikte technieken zijn, brengen ze nog steeds uitdagingen met zich mee. Deze komen aan bod in sectie 4, want eerst wordt semantische segmentatie diepgaander besproken.
 
-\section{Semantische segmentatie}
+\section{Semantische segmentatie dieper bekeken}
 
 \section{Uitdagingen bij segmentatie in precisielandbouw}
 
-Uit onderzoek van \textcite{Luo2024} blijkt dat de interesse in deep learning, en meer specifiek in semantische segmentatie, binnen de precisielandbouw groeit. Deze techniek speelt een belangrijke rol in toepassingen gebaseerd op computervisie. Semantische segmentatie maakt het mogelijk om objecten op pixelniveau binnen een afbeelding te classificeren en toe te wijzen aan specifieke klassen. Modellen, zoals U-Net, SegNet en DeepLab, worden tegenwoordig vaak toegepast in diverse segmentatietoepassingen. Toch blijven segmentatiemodellen binnen complexe landbouwomgevingen op knelpunten stuiten. De robuustheid van bestaande segmentatiemethoden voor het verwerken van complexe afbeeldingen moet namelijk verbeterd worden. Daarnaast blijft hun vermogen om te generaliseren naar ongeziene data beperkt. Een bijkomend obstakel is het beperkte aantal gelabelde data, wat de training en evaluatie van nieuw ontwikkelde deep learning-modellen bemoeilijkt. Segmentatiemethoden die de dataset uitbreiden met augmentatie, zoals het gebruik van synthetische data, stellen deep learning-methoden in staat hun segmentatiemogelijkheden te verbeteren.
+Uit onderzoek van \textcite{Luo2024} blijkt dat de interesse in deep learning, en meer specifiek in semantische segmentatie, binnen de precisielandbouw groeit. Deze techniek speelt een belangrijke rol in toepassingen gebaseerd op computervisie. Semantische segmentatie maakt het mogelijk om objecten op pixelniveau binnen een afbeelding te classificeren en toe te wijzen aan specifieke klassen. Modellen zoals U-Net, SegNet en DeepLab worden tegenwoordig vaak toegepast in diverse segmentatietoepassingen. Toch blijven segmentatiemodellen binnen complexe landbouwomgevingen op knelpunten stuiten.
+
+De robuustheid van bestaande segmentatiemethoden voor het verwerken van complexe afbeeldingen moet namelijk verbeterd worden. Daarnaast blijft hun vermogen om te generaliseren naar ongeziene data beperkt. Een bijkomend obstakel is het beperkte aantal gelabelde data, wat de training en evaluatie van de deep learning-modellen bemoeilijkt. Segmentatiemethoden die de dataset uitbreiden met augmentatie, zoals het gebruik van synthetische data, stellen deep learning-methoden in staat hun segmentatiemogelijkheden te verbeteren.
 
 Onderzoek van \textcite{Charisis2024} bevestigt dat instantiesegmentatie dezelfde uitdagingen ervaart binnen de precisielandbouw. Zij voegen toe dat er universele prestatiemaatstaven ontbreken, waardoor modelvergelijkingen vaak afhankelijk zijn van onderzoeksspecifieke criteria. Verder zorgt de beperkte beschikbaarheid van open-source semi-automatische labeltools voor tijdsintensieve manuele annotatie van de datasets. Ten slotte vormt de praktische toepassing van het theoretische model in het veld vaak een extra belemmering.
 
@@ -84,6 +81,12 @@ Ondanks deze huidige knelpunten neemt de ontwikkeling van deep learning gebaseer
 
 Bovenvermelde uitdagingen worden verder geanalyseerd binnen de methodologie, waar een breder antwoord wordt gegeven op de bijbehorende deelvraag.
 
+\section{Synthetische data vergaren}
+% zeg dat de bachelorproef in hoofdzaak zich focust op het probleem van te weinig (gelabelde) data
+\section{Applicaties van synthetische data}
+\section{Modeloptimalisatie}
+
+% -------------------------------
 \section{Tips}
 
 Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
