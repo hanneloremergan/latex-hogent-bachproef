@@ -54,7 +54,7 @@ De technieken besproken in de vorige sectie vallen onder de overkoepelende terme
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{strawberry.png}
+    \includegraphics[width=0.9\textwidth]{strawberry.png}
     \caption[Voorbeeld objectdetectie.]{\label{fig:strawberry}Een visueel voorbeeld van objectdetectie: groen duidt rijpe aardbeien aan, rood onrijpe en blauw halfrijpe \autocite{Chai2023}.}
 \end{figure}
 
@@ -62,22 +62,27 @@ Segmentatie daarentegen gaat een stap verder: elk pixel in de afbeelding wordt t
  
 Segmentatie biedt een gedetailleerdere visuele interpretatie dan objectdetectie. Er zijn twee vormen van segmentatie: semantische segmentatie en instantiesegmentatie. Bij semantische segmentatie worden alle objecten van eenzelfde categorie in dezelfde kleur gemarkeerd. Instantiesegmentatie daarentegen wijst elk individueel object binnen een categorie een unieke kleur toe. Hierdoor kunnen objecten binnen dezelfde klasse van elkaar worden onderscheiden. Figuur \ref{fig:plants} toont beide vormen van segmentatie.
 
+De proefopstelling van deze bachelorproef bestaat uit een semantisch segmentatiemodel. 
+
 \begin{figure}
     \centering
-    \includegraphics[width=0.85\textwidth]{plants.png}
+    \includegraphics[width=0.65\textwidth]{plants.png}
     \caption[Voorbeeld segmentatie.]{\label{fig:plants}Een visueel voorbeeld van segmentatie. De middelste kolom toont semantische segmentatie van afzonderlijke planten. De rechterkolom geeft instantiesegmentatie weer van individuele bladeren binnen elke plant \autocite{Lei2024}.}
 \end{figure}
 
-De proefopstelling van deze bachelorproef bestaat uit een semantisch segmentatiemodel.
+Hoewel objectdetectie en segmentatie krachtige en veelgebruikte technieken zijn, brengen ze nog steeds uitdagingen met zich mee. Deze komen aan bod in sectie 4, want eerst wordt semantische segmentatie diepgaander besproken.
 
-\subsection{Huidige uitdagingen}
-% EG !!! kritisch zijn (defecten moeten snel en nauwkeurig aangeduid worden, segmentatie heeft veel kracht en opslag nodig ...)
+\section{Semantische segmentatie}
 
+\section{Uitdagingen bij segmentatie in precisielandbouw}
 
+Uit onderzoek van \textcite{Luo2024} blijkt dat de interesse in deep learning, en meer specifiek in semantische segmentatie, binnen de precisielandbouw groeit. Deze techniek speelt een belangrijke rol in toepassingen gebaseerd op computervisie. Semantische segmentatie maakt het mogelijk om objecten op pixelniveau binnen een afbeelding te classificeren en toe te wijzen aan specifieke klassen. Modellen, zoals U-Net, SegNet en DeepLab, worden tegenwoordig vaak toegepast in diverse segmentatietoepassingen. Toch blijven segmentatiemodellen binnen complexe landbouwomgevingen op knelpunten stuiten. De robuustheid van bestaande segmentatiemethoden voor het verwerken van complexe afbeeldingen moet namelijk verbeterd worden. Daarnaast blijft hun vermogen om te generaliseren naar ongeziene data beperkt. Een bijkomend obstakel is het beperkte aantal gelabelde data, wat de training en evaluatie van nieuw ontwikkelde deep learning-modellen bemoeilijkt. Segmentatiemethoden die de dataset uitbreiden met augmentatie, zoals het gebruik van synthetische data, stellen deep learning-methoden in staat hun segmentatiemogelijkheden te verbeteren.
 
+Onderzoek van \textcite{Charisis2024} bevestigt dat instantiesegmentatie dezelfde uitdagingen ervaart binnen de precisielandbouw. Zij voegen toe dat er universele prestatiemaatstaven ontbreken, waardoor modelvergelijkingen vaak afhankelijk zijn van onderzoeksspecifieke criteria. Verder zorgt de beperkte beschikbaarheid van open-source semi-automatische labeltools voor tijdsintensieve manuele annotatie van de datasets. Ten slotte vormt de praktische toepassing van het theoretische model in het veld vaak een extra belemmering.
 
+Ondanks deze huidige knelpunten neemt de ontwikkeling van deep learning gebaseerde segmentatie binnen de precisielandbouw snel toe. Er wordt verwacht dat deze technologie de komende jaren een aanzienlijke impact zal hebben.
 
-
+Bovenvermelde uitdagingen worden verder geanalyseerd binnen de methodologie, waar een breder antwoord wordt gegeven op de bijbehorende deelvraag.
 
 \section{Tips}
 
