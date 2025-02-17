@@ -54,13 +54,19 @@ De technieken besproken in de vorige sectie vallen onder de overkoepelende terme
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.9\textwidth]{strawberry.png}
+    \includegraphics[width=0.8\textwidth]{strawberry.png}
     \caption[Voorbeeld objectdetectie.]{\label{fig:strawberry}Een visueel voorbeeld van objectdetectie: groen duidt rijpe aardbeien aan, rood onrijpe en blauw halfrijpe \autocite{Chai2023}.}
 \end{figure}
 
-Segmentatie daarentegen gaat een stap verder: elk pixel in de afbeelding wordt toegewezen aan een specifieke klasse, waardoor objecten niet alleen worden geïdentificeerd, maar ook volledig worden ingekleurd op pixelniveau in plaats van met een kader. Als voorbeeld brengt het de exacte verspreiding van een plantenziekte in kaart of onderscheidt het een plant van de achtergrond. 
+Segmentatie daarentegen gaat een stap verder: elk pixel in de afbeelding wordt toegewezen aan een specifieke klasse, waardoor objecten niet alleen worden geïdentificeerd, maar ook volledig worden ingekleurd op pixelniveau in plaats van met een kader. Als voorbeeld brengt het de exacte verspreiding van een plantenziekte in kaart of onderscheidt het een plant van de achtergrond.
+ 
+Segmentatie biedt een gedetailleerdere visuele interpretatie dan objectdetectie. Er zijn twee vormen van segmentatie: semantische segmentatie en instantiesegmentatie. Bij semantische segmentatie worden alle objecten van eenzelfde categorie in dezelfde kleur gemarkeerd. Instantiesegmentatie daarentegen wijst elk individueel object binnen een categorie een unieke kleur toe. Hierdoor kunnen objecten binnen dezelfde klasse van elkaar worden onderscheiden. Figuur \ref{fig:plants} toont beide vormen van segmentatie.
 
-Segmentatie biedt een gedetailleerdere visuele interpretatie dan objectdetectie en komt in twee vormen voor: semantische segmentatie en instantiesegmentatie. Bij semantische segmentatie worden alle objecten van dezelfde categorie in dezelfde kleur gemarkeerd, terwijl bij instantie-segmentatie elk individueel object binnen een categorie een unieke kleur krijgt toegewezen. Dit zorgt voor een onderling onderscheid tussen objecten binnen dezelfde klasse. 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.85\textwidth]{plants.png}
+    \caption[Voorbeeld segmentatie.]{\label{fig:plants}Een visueel voorbeeld van segmentatie. De middelste kolom toont semantische segmentatie van afzonderlijke planten. De rechterkolom geeft instantiesegmentatie weer van individuele bladeren binnen elke plant \autocite{Lei2024}.}
+\end{figure}
 
 De proefopstelling van deze bachelorproef bestaat uit een semantisch segmentatiemodel.
 
